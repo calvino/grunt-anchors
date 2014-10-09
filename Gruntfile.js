@@ -32,19 +32,21 @@ module.exports = function(grunt) {
     anchors: {
       default_options: {
         options: {
+          expand: true,
+          cwd: 'test/fixtures'
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        anchors: ['views1/*'],
+        targetHtml: ['index.html']
       },
       custom_options: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!'
+          expand: true,
+          cwd: 'test/fixtures'
         },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        anchors: {
+          htmlFiles: ['views2/*.html'],
+        },
+        targetHtml: ['index.html']
       }
     },
 

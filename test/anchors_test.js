@@ -24,25 +24,29 @@ var grunt = require('grunt');
 
 exports.anchors = {
   setUp: function(done) {
-    // setup here if necessary
     done();
   },
   default_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    var content = grunt.file.read('test/fixtures/index.html');
+    console.log(content);
+
+    var anchorCount = content.match(/<a href="views1/g).length;
+    test.equal(3, anchorCount, '3 anchors should have been written');
 
     test.done();
   },
   custom_options: function(test) {
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    var content = grunt.file.read('test/fixtures/index.html');
+    console.log(content);
+
+    var anchorCount = content.match(/<a href="views2/g).length;
+    test.equal(2, anchorCount, '2 anchors should have been written');
 
     test.done();
   },
+  
 };
