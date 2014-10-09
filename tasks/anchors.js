@@ -29,6 +29,9 @@ module.exports = function(grunt) {
         name.pop();
         name = name.join();
 
+        name = name.split('/');
+        name = name.pop();
+
         return grunt.template.process(template, {data: {filepath: file, name: name}});
       });
 
