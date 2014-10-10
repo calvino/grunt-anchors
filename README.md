@@ -78,8 +78,8 @@ becomes:
   </head>
   <body>
     <!-- begin:anchors -->
-    <a href="file1.html">file1</a>
-    <a href="file2.html">file2</a>
+    <a href="path/file1.html">file1</a>
+    <a href="path/file2.html">file2</a>
     <!-- end:anchors -->
   </body>
 </html>
@@ -113,8 +113,12 @@ grunt.initConfig({
   <head>
   </head>
   <body>
-    <!-- begin:anchors -->
-    <!-- end:anchors -->
+    <!-- begin:group1 -->
+    <!-- end:group1 -->
+
+    <h1>Text Files</h1>
+    <!-- begin:textFiles -->
+    <!-- end:textFiles -->
   </body>
 </html>
 ```
@@ -127,10 +131,14 @@ becomes:
   </head>
   <body>
     <!-- begin:group1 -->
+    <a href="path/file1.html">file1</a>
+    <a href="path/file2.html">file2</a>
     <!-- end:group1 -->
 
     <h1>Text Files</h1>
     <!-- begin:textFiles -->
+    <a href="path/file1.txt">file1</a>
+    <a href="path/file2.txt">file2</a>
     <!-- end:textFiles -->
   </body>
 </html>
